@@ -15,7 +15,8 @@ a:active {
 }
 
 div#links {
-	padding: 0px
+	word-spacing: 30px;
+	padding: 5px
 }
 
 div#mainHeader {
@@ -28,13 +29,31 @@ div#feelings{
 
 div#progress{
 	float: right;
+	background-color: #f0f0ff;
+	margin: -45 10 0 0;
+}
+
+div#lorem{
+	margin: -15px 0 0 10;
+}
+
+div#copyright{
+	margin: 20px 0 0 0;
 }
 
 div.rightbar {
-	margin: 28px 0 0 210px;
+	margin: -10px 0 0 200px;
 }
 
 div.leftbar {
-	padding: 10px;
+	margin: -70 0 0 5;
 	float: left;
+}
+
+div.topRight {
+	float: right;
+}
+
+div.topLeft {
+	#float: left;
 }
