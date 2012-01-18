@@ -3,15 +3,20 @@ body {
 }
 a:link {
     color: #ffffff;
+	text-decoration: none;
 }
 a:visited {
     color: #ffffff;
 }
 a:hover {
-    background-color: #EFEFEF;
+    color: #c25a3d
 }
 a:active {
-    color: #FF0000;
+    color: #c25a3d;
+}
+
+a: {
+	text-decoration: none;
 }
 
 div#links {
@@ -38,7 +43,7 @@ div#lorem{
 }
 
 div#copyright{
-	margin: 20px 0 0 0;
+	padding: 7px;
 }
 
 div.rightbar {
