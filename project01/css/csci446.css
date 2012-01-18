@@ -1,3 +1,40 @@
 body {
 	background-color: #aaaaaa;
 }
+a:link {
+    color: #ffffff;
+}
+a:visited {
+    color: #ffffff;
+}
+a:hover {
+    background-color: #EFEFEF;
+}
+a:active {
+    color: #FF0000;
+}
+
+div#links {
+	padding: 0px
+}
+
+div#mainHeader {
+	padding: 0px
+}
+
+div#feelings{
+	background-color: #fcfcfc;
+}
+
+div#progress{
+	float: right;
+}
+
+div.rightbar {
+	margin: 28px 0 0 210px;
+}
+
+div.leftbar {
+	padding: 10px;
+	float: left;
+}
