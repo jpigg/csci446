@@ -1,6 +1,8 @@
 class Player
   def play_turn(warrior)
-	if warrior.feel.empty?
+	if warrior.feel.wall?
+		warrior.pivot!	
+	elsif warrior.feel.empty?
 		#if @health > warrior.health : do not rest
 		if (@attack == false)
 			if(@health > warrior.health)
