@@ -7,11 +7,13 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
 class OrdersController < ApplicationController
+    skip_before_filter :authorize, only: [:new, :create]
+
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
-
+    @orders = Order.paginate page: params[:page], order: 'created_at desc',
+      per_page: 10
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @orders }
@@ -37,7 +39,6 @@ class OrdersController < ApplicationController
       redirect_to store_url, notice: "Your cart is empty"
       return
     end
-
     @order = Order.new
 
     respond_to do |format|
@@ -56,11 +57,11 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
-
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
+        OrderNotifier.received(@order).deliver
         format.html { redirect_to store_url, notice: 
           'Thank you for your order.' }
         format.json { render json: @order, status: :created,
