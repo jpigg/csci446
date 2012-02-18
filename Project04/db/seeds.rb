@@ -5,3 +5,44 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Article.delete_all
+Article.create(title: 'Lorem Ipsum', author_name: 'Robert Frost',
+	body:
+		%{<p>
+			Robert Frost was born in San Fracisco and then there's some more information 
+			than I'm able to see on this for an example, but that's ok.
+		</p>},
+	creation_date: 'Tuesday, Dec. 6 2011')
+	
+Article.create(title: 'Lorem Ipsum', author_name: 'Robert Frost',
+	body:
+		%{<p>
+			Robert Frost was born in San Fracisco and then there's some more information 
+			than I'm able to see on this for an example, but that's ok.
+		</p>},
+	creation_date: 'Tuesday, Dec. 6 2011')
+	
+Article.create(title: 'Lorem Ipsum', author_name: 'Robert Frost',
+	body:
+		%{<p>
+			Robert Frost was born in San Fracisco and then there's some more information 
+			than I'm able to see on this for an example, but that's ok.
+		</p>},
+	creation_date: 'Tuesday, Dec. 6 2011')
+	
+Article.create(title: 'Lorem Ipsum', author_name: 'Robert Frost',
+	body:
+		%{<p>
+			Robert Frost was born in San Fracisco and then there's some more information 
+			than I'm able to see on this for an example, but that's ok.
+		</p>},
+	creation_date: 'Tuesday, Dec. 6 2011')
+	
+Article.create(title: 'Lorem Ipsum', author_name: 'Robert Frost',
+	body:
+		%{<p>
+			Robert Frost was born in San Fracisco and then there's some more information 
+			than I'm able to see on this for an example, but that's ok.
+		</p>},
+	creation_date: 'Tuesday, Dec. 6 2011')
+	
