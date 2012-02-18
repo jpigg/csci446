@@ -5,6 +5,15 @@
 	font-size: 8px;
 }
 
+#h1 {
+	float: left;
+}
+
+#side {
+	float: right;
+}
+
+
 .list_title {
 	background: #CCCCCC;
 }
@@ -12,6 +21,7 @@
 .list_line_even {
   background:   #FFFFFF;
   font-size: 8px;
+  margin: 50px 0 0 0;
 }
 
 .list_line_odd {
