@@ -24,9 +24,11 @@
     <%= f.text_area :body %>
   </div>
 	
-	<some kind of code to insert the time>
+	<%= f.label :creation_date %><br />
+	<%= f.text_field :creation_date%>
 
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

@@ -8,7 +8,8 @@
 <%= link_to image_tag("back.png", :border=>0) + "list all articles", articles_path, :title => "go back to articles list screen." %>
 <%= link_to image_tag("modify.png", :border=>0) + "edit", edit_article_path(@article), :title => "edit this article." %>
 <%= link_to image_tag("delete.png", :border=>0) + "delete", @article, confirm: 'Are you sure?', method: :delete, :title => "delete this article." %>
-<%= link_to image_tag("email.png", :border=>0) + "email", :title => "email this article to a friend." %>
+<%= mail_to nil, image_tag("email.png", :border=>0) + "email", :subject => @article.title,
+	:body => request.fullpath, :title=> "email this article to a friend"%>
 </div>
 <p>
 <div id="view_title">
@@ -27,4 +28,3 @@
   <%= strip_tags(@article.body) %>
 </div>
 </p>
-
