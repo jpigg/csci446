@@ -2,9 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#edit_back_button {
+#create_title {
+	font-size:28px;
+	font-weight: bold;
+	padding: 20px;
+}
+#back_button {
 	padding: 10px;
 }
+
+#edit_title {
+	font-size: 28px;
+	font-weight: bold;
+	padding: 20px;
+}
+
 #article_list {
 	font-size: 10px;
 	float: left;

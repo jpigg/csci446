@@ -1,8 +1,12 @@
 <div id="subtitle">
 ... my cousin works for Bit.ly
 </div>
-<div id="edit_back_button">
-	<%= link_to image_tag("back.png", :border=>0) + "back", articles_path %>
+
+<div id="back_button">
+	<%= link_to image_tag("back.png", :border=>0) + "back", :back %>
+</div>
+<div id="edit_title">
+Editing "<%= @article.title %>"
 </div>
 <%= render 'form' %>
 
