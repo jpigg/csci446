@@ -1,0 +1,41 @@
+#subtitle
+  \...with a name .com hipsters love!
+%br
+  %br
+    %br
+      %h1 All the World's Articles
+      %br
+        #side
+          = link_to image_tag("add.png", :border=>0) + "Create an Article", new_article_path, :title => "Create a new article."
+        %br
+          %br
+            #article_list
+              %table.articles
+                %thead.fixedHeader
+                  %tr.list_title
+                    %th.title Title
+                    %th.author Author name
+                    %th.body Body
+                    %th.date Creation date
+                    %th.show Show
+                    %th.edit Edit
+                    %th.destroy Destroy
+                    %th.scrollBar
+                %tbody.scrollContent
+                  - @articles.each do |article|
+                    %tr{:class => cycle('list_line_odd', 'list_line_even')}
+                      %td.title= article.title
+                      %td.author= article.author_name
+                      %td.body= truncate(strip_tags(article.body), length: 48)
+                      %td.date= article.creation_date
+                      %td.show= link_to image_tag("show.png", :border=>0), article, :title => "View this article."
+                      %td.edit= link_to image_tag("modify.png", :border=>0), edit_article_path(article), :title => "Edit this article."
+                      %td.destroy= link_to image_tag("delete.png", :border=>0), article, confirm: 'Are you sure?', method: :delete, :title => "Delete this article."
+              %br
+                - if @articles.count == 1
+                  = @articles.count
+                  article.
+                - else
+                  = @articles.count
+                  articles.
+            %br

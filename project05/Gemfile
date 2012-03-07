@@ -7,6 +7,11 @@ gem 'rails', '3.1.1'
 
 gem 'sqlite3'
 
+# Added manually
+#gem "erb2haml", :group => :development
+
+gem 'erb2haml'
+gem 'haml-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
