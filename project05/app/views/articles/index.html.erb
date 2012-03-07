@@ -1,0 +1,47 @@
+<div id=subtitle>
+...with a name .com hipsters love!
+</div>
+<br><br><br>
+<h1>All the World's Articles</h1>
+<br>
+<div id="side">
+	<%= link_to image_tag("add.png", :border=>0) + "Create an Article", new_article_path, :title => "Create a new article." %>
+</div>
+<br><br>
+<div id="article_list">
+	<table class = "articles">
+	<thead class = "fixedHeader">
+	  <tr class="list_title">
+		<th class="title">Title</th>
+		<th class="author">Author name</th>
+		<th class="body">Body</th>
+		<th class="date">Creation date</th>
+		<th class="show">Show</th>
+		<th class="edit">Edit</th>
+		<th class="destroy">Destroy</th>
+		<th class="scrollBar"></th>
+	  </tr>
+	</thead>
+
+	  <tbody class=scrollContent>
+	  <% @articles.each do |article| %>
+	  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+		<td class="title"><%= article.title %></td>
+		<td class="author"><%= article.author_name %></td>
+		<td class="body"><%= truncate(strip_tags(article.body), length: 48) %></td>
+		<td class="date"><%= article.creation_date %></td>
+		<td class="show"><%= link_to image_tag("show.png", :border=>0), article, :title => "View this article." %></td>
+		<td class="edit"><%= link_to image_tag("modify.png", :border=>0), edit_article_path(article), :title => "Edit this article." %></td>
+		<td class="destroy"><%= link_to image_tag("delete.png", :border=>0), article, confirm: 'Are you sure?', method: :delete, :title => "Delete this article." %></td>
+	  </tr>
+	  <% end %>
+	  </tbody>
+	</table>
+	<br>
+	<% if @articles.count == 1 %>
+		<%= @articles.count %> article.
+	<% else %>
+		<%= @articles.count %> articles.
+	<% end %>
+</div>
+<br>

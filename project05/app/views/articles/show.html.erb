@@ -1,0 +1,30 @@
+<div id="subtitle">
+... what's "Articl" in Spanish anyway?
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<div id="view_links">
+<%= link_to image_tag("back.png", :border=>0) + "list all articles", articles_path, :title => "go back to articles list screen." %>
+<%= link_to image_tag("modify.png", :border=>0) + "edit", edit_article_path(@article), :title => "edit this article." %>
+<%= link_to image_tag("delete.png", :border=>0) + "delete", @article, confirm: 'Are you sure?', method: :delete, :title => "delete this article." %>
+<%= mail_to nil, image_tag("email.png", :border=>0) + "email", :subject => @article.title,
+	:body => request.fullpath, :title=> "email this article to a friend"%>
+</div>
+<p>
+<div id="view_title">
+  <%= @article.title %>
+</div>
+</p>
+
+<p>
+<div id="view_author_date">
+	by <%= @article.author_name %>. submitted on <%= @article.creation_date %>.
+</div>
+</p>
+
+<p>
+<div id="view_body">
+  <%= strip_tags(@article.body) %>
+</div>
+</p>
