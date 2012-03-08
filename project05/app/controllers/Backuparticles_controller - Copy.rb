@@ -2,13 +2,12 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    #@articles = Article.all
-	@articles = Article.paginate :per_page => 8, :page => params[:page], :order => 'title'
-	
-    #respond_to do |format|
-    #  format.html # index.html.erb
-    #  format.json { render json: @articles }
-    #end
+    @articles = Article.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @articles }
+    end
   end
 
   # GET /articles/1

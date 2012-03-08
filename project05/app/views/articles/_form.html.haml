@@ -14,7 +14,7 @@
   .field
     = f.label :author_name
     %br/
-    = f.text_field :author_name
+    = f.collection_select @author.name
   .field
     = f.label :body
     %br/
