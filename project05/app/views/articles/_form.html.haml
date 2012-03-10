@@ -13,7 +13,10 @@
     = f.text_field :title
   .field
     = f.label :author_name
-    = f.options_from_collection_for_select Author.all
+    %br/
+    -# = this collection select method will not save to the database.
+    -# = an error is therefor thrown that the author name can't be blank.
+    = collection_select :article, :author_id, Author.all, :id, :name
     %br/
   .field
     = f.label :body
