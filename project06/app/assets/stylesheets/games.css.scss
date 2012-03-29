@@ -1,0 +1,43 @@
+// Place all the styles related to the Games controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#games_table {
+	text-align: center;
+	align: center;
+	margin: 50px 0 0 0;
+}
+
+.list_title {
+	background: #CCCCCC;
+}
+
+.list_line_even {
+	background:   #FFFFFF;
+	font-size: 8px;
+}
+
+.list_line_odd {
+	background:   #EEEEEE;
+	font-size: 8px;
+}
+
+table.games {
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table.games td {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	padding: 5px
+}
+
+table.games th {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	padding: 5px
+}
+

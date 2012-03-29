@@ -1,0 +1,24 @@
+
+
+<div id="games_table">
+	<%= will_paginate @games %>
+	<table class="games">
+	  <tr class="list_title">
+		<th>Title</th>
+		<th>Rating</th>
+		<th>Date added</th>
+	  </tr>
+
+	<% @games.each do |game| %>
+	  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+		<td><%= link_to game.title, edit_game_path(game) %></td>
+		<td><%= game.rating %></td>
+		<td><%= game.date_added %></td>
+	  </tr>
+	<% end %>
+	</table>
+
+	<br />
+
+	<%= link_to 'New Game', new_game_path %>
+</div>
