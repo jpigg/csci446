@@ -7,9 +7,43 @@
 */
 
 #title {
-	margin: 30px 0 0 0;
+	margin: 50px 0 0 0;
 	text-align: center;
 	float: center;
 	font-size: 40px;
 	font-weight: bold;
+}
+
+#user_nav {
+	float: right;
+	font-size: 12px;
+}
+
+#flash_notice {
+  color: #000 !important;
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+
+a:link{
+	color: #333333;
+}
+
+a:visited {
+	color: #dddddd;
+}
+
+a:hover {
+	color: #333333;
+}
+
+a:active {
+	color: #dddddd;
+}
+
+link_to: {
+	text-decoration: none;
 }

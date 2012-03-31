@@ -1,6 +1,11 @@
 Gamez::Application.routes.draw do
-  resources :games
-  root to: 'games#index'
+	resources :user_sessions
+	
+	resources :users
+	match "login", :controller => "user_sessions", :action => "new"
+	match "logout", :controller => "user_sessions", :action => "destroy"
+	resources :games
+	root to: 'games#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
