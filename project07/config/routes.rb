@@ -1,20 +1,4 @@
-Gamez::Application.routes.draw do
-	resources :user_sessions
-	
-	resources :users
-	match "login", :controller => "user_sessions", :action => "new"
-	match "logout", :controller => "user_sessions", :action => "destroy"
-	resources :games
-	root to: 'games#index'
-	
-	namespace "admin" do
-		#admintroles_path
-		resource :roles
-		#admin_users_path
-		resource :users
-		root controller: 'admin', action: 'index'
-	end
-
+Game::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
