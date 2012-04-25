@@ -1,6 +1,7 @@
 var guessesLeft = 10;
 var highScores = new Array([9, "HarryJamesPotter"], [3, "ZedCthulhu"], [2, "NearlyDied"]);
-var setNum = 50;
+//var setNum = 50;
+var setNum = Math.floor(Math.random()*100) + 1;
 
 $(function() {
   updateScore(guessesLeft);
@@ -18,24 +19,34 @@ function updateGuesses()
 	}
 }
 
-function tooHigh()
+function tooHigh(guess)
 {
-	alert("too high");
+	//alert("too high");
+	$("#message").html(guess + " was too high!");
 }
 
-function tooLow()
+function tooLow(guess)
 {
-	alert("too low");
+	$("#message").html(guess + " was too low!");
 }
 
 function lose()
 {
-	alert("You lose");
+	again("You Lost!");
+}
+
+function again(preMessage)
+{
+	$("#message").html(preMessage + " <a href=\"javascript:location.reload(true)\">Play again?</a>");
 }
 
 function win()
 {
-	alert("You win");
+	var name=prompt("Congrats! What's your name?", "Yong Bakos");
+	//highScores = new Array([34, "yourmom"], [9, "HarryJamesPotter"], [3, "ZedCthulhu"], [2, "NearlyDied"]);
+	var newScore = new Array([guessesLeft, name]);
+	populateHighScores(newScore);
+	again("Congrats! You won!");
 }
 
 function checkGuess()
@@ -43,17 +54,19 @@ function checkGuess()
 	var guess = $('#guess').val();
 	if(guess < setNum)
 	{
-		tooLow();
+		tooLow(guess);
+		updateGuesses();
 	}
 	else if(guess > setNum)
 	{
-		tooHigh();
+		tooHigh(guess);
+		updateGuesses();
 	}
 	else
 	{
 		win();
 	}
-	updateGuesses();
+
 //	alert("test");
 }
 
